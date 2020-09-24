@@ -4,27 +4,32 @@ document.addEventListener('DOMContentLoaded',function(){
   let image = document.querySelector('img');
   image.src = `${img}`;
 });
-document.querySelector('.singleton-pattern').classList.add('show');
-document.querySelector('.button-links').addEventListener('click',function(event){
-  let nameId = event.target.id;
-  let contentClasses = event.target.parentNode.parentNode.nextElementSibling.children;
-  if(nameId==='singleton'){
-    switchTabs('singleton-pattern')
-  }
-  else if(nameId==='observer'){
-    switchTabs('observer-pattern')
-  }
-  else if(nameId==='facade'){
-    switchTabs('facade-pattern')
-  }
-  function switchTabs(tabName){
-    for(let idx = 0; idx < contentClasses.length; idx++){
-      if(contentClasses[idx].className===tabName){
-        contentClasses[idx].classList.add('show')
-      }
-      else{
-        contentClasses[idx].classList.remove('show')
-      }
+
+let btns = document.querySelectorAll('.patterns');
+let articles = document.querySelectorAll('.articles');
+btns.forEach(button =>{
+  button.addEventListener('click',(event)=>{
+    cleanAllButtonsActiveClasses();
+    event.target.classList.add('active');
+    let contentId = event.target.dataset.id;
+    content(contentId);
+  })
+})
+
+/*Content add active class*/
+function content(contentId){
+  articles.forEach( (content) =>{
+    if(content.id===contentId){
+      cleanAllContentsActiveClasses();
+      content.classList.add('active');
     }
-  }
-},false)
+  })
+}
+/*Remove all active clsses from content Elements*/
+function cleanAllContentsActiveClasses(){
+  articles.forEach( (content) => content.classList.remove('active'));
+}
+/*Remove all active clsses from button Elements*/
+function cleanAllButtonsActiveClasses(){
+  btns.forEach( (button) => button.classList.remove('active'));
+}

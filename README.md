@@ -1,12 +1,12 @@
 # _Tabs_
 
 #### _Version 1_
-#### _Date 10/21/2020_
+#### _Date 10/23/2020_
 #### By _**Adilet Momunaliev**_
 
 ## Description
 
-_._
+_Tabs is designed to see paragraphs when you click header buttons._
 
 ## Getting Started
 
@@ -19,7 +19,7 @@ These instructions will get you a copy of the project up and running on your loc
 * npm install
 * npm run start
 ### Specifications
- <!-- ![min-width:620px](picture); -->
+ ![min-width:620px](Tabs.png);
 ## Technologies Used
 
 _HTML, CSS, JavaScript, DOM Elements and Methods, IDE Atom_

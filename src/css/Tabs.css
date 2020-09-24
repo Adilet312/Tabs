@@ -21,6 +21,7 @@ img{
   display: flex;
   flex-direction: column;
   justify-content: space-around;
+   box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.5);
 }
 .button-links{
   display: flex;
@@ -30,42 +31,29 @@ img{
 .button-links button{
   flex-basis: 167px;
   height:30px;
-  background: #fff;
   border: 0px;
   font-family: Merienda One;
-   box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.5);
+
+}
+.button-links button:focus{
+  border: none;
+  outline: none;
 }
 /* Contents */
 .content-container{
  display: flex;
  flex-direction: row;
+ background: #fff;
 }
-.singleton-pattern.show{
-  visibility: hidden;
+.patterns{
+  background-color: hsl(210,36%,96%);
 }
-.singleton-pattern.show{
-  visibility: visible;
-  flex-basis: 500px;
-  height: 200px;
-  background: #5F9EA0;
-  box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.5);
+.patterns.active{
+  background: #fff;
 }
-.observer-pattern.show{
-  visibility: visible;
-  flex-basis: 500px;
-  height: 200px;
-  background:linear-gradient(100deg,rgb(103,66,150),rgb(54,28,88));
+.articles.active{
+  display: block;
 }
-.observer-pattern{
-  visibility: hidden;
-}
-.facade-pattern.show{
-  visibility: visible;
-  flex-basis: 500px;
-  height: 200px;
-  background: lightblue;
-  box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.5);
-}
-.facade-pattern{
-  visibility: hidden;
+.articles{
+  display: none;
 }
